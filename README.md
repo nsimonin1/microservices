@@ -12,3 +12,9 @@
 
 - Product details Service
 
+
+
+Article help me to build this app
+
+https://dzone.com/articles/quick-guide-to-microservices-with-spring-boot-20-e
+
