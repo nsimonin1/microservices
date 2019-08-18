@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: store-inventaire
+server:
+  port: 0

@@ -1,0 +1,25 @@
+server:
+  port: 8084
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: store_commande_id
+        uri: lb://store-commande
+        predicates:
+        - Path=/commande/**
+        filters:
+        - RewritePath=/commande/(?<segment>.*), /$\{segment} 
+      - id: store_service_id
+        uri: lb://store-service
+        predicates:
+        - Path=/store/**
+        filters:
+        - RewritePath=/store/(?<segment>.*), /$\{segment}     
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8061/eureka/
